@@ -1,5 +1,5 @@
 {
-  "name": "Rishabhs project",
+  "name": "rishabh_project",
   "version": "1.0.0",
   "author": {
     "name": "Rishabh"
@@ -20,7 +20,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && eslint '*/**/*.{ts,tsx}' --fix",
+    "lint": "next lint --fix",
     "format": "prettier '*/**/*.{ts,tsx}' --write"
   },
   "dependencies": {

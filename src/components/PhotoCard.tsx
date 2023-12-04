@@ -1,31 +1,11 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 
 const PhotoCard: React.FC<PhotoCardProps> = ({ photo, onLike }) => {
   const [loading, setLoading] = useState(false);
-  const [photos, setPhotos] = useState([]);
-  // const [savedItems, setSavedItems] = useState([]);
 
-  const fetchPhotos = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get("https://jsonplaceholder.typicode.com/photos");
-      setPhotos(response.data.slice(0, 20)); 
-    } catch (error) {
-      console.error("Error fetching photos:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchPhotos();
-  }, []);
-
-  const handleLike = (id: number) => {
-    onLike(photo.id);
-   
-  };
+  // const handleLike = (id: number) => {
+  //   onLike(photo.id);
+  // };
 
   return (
     <div className={`card w-96 bg-base-100 shadow-xl m-4 ${loading ? "opacity-50 cursor-not-allowed" : ""}`}>
