@@ -5,4 +5,9 @@ module.exports = {
     extend: {},
   },
   plugins: [require("daisyui")],
+  rules: {
+    // ...
+    'quotes': ['error', 'single'], // or 'double' if you prefer
+    // ...
+  },
 };

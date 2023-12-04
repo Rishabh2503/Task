@@ -15,7 +15,6 @@ const Content: React.FC<ContentProps> = ({ title }) => {
         <ul className="flex space-x-4">
           <li>
             <Link href="/admin/photo" className="text-blue-500 hover:underline">
-              
               Photos
             </Link>
           </li>
