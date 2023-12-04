@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import SavedItem from './SavedItem';
-import Layout from './Layout';
+import SavedItem from "./SavedItem";
+import Layout from "./Layout";
 
 interface SavedProps {
   savedItems: Array<{
     id: number;
-    type: 'photo' | 'post';
+    type: "photo" | "post";
     title: string;
     url?: string;
     content?: string;

@@ -1,7 +1,7 @@
-import React, { useState, useEffect, Suspense } from 'react';
-import axios from 'axios';
-import PhotoCard from '../../components/PhotoCard';
-import Layout from '../../components/Layout';
+import React, { useState, useEffect, Suspense } from "react";
+import axios from "axios";
+import PhotoCard from "../../components/PhotoCard";
+import Layout from "../../components/Layout";
 
 interface Photo {
   id: number;
@@ -15,10 +15,10 @@ const Photo: React.FC = () => {
 
   const fetchPhotos = async () => {
     try {
-      const response = await axios.get<Photo[]>('https://jsonplaceholder.typicode.com/photos');
+      const response = await axios.get<Photo[]>("https://jsonplaceholder.typicode.com/photos");
       setPhotos((prevPhotos) => [...prevPhotos, ...response.data.slice(0, 20)]);
     } catch (error) {
-      console.error('Error fetching photos:', error);
+      console.error("Error fetching photos:", error);
     }
   };
 
@@ -30,7 +30,7 @@ const Photo: React.FC = () => {
     const itemToLike = photos.find((photo) => photo.id === id);
     if (itemToLike) {
       setSavedItems((prevSavedItems) => [...prevSavedItems, itemToLike]);
-      localStorage.setItem('likedItems', JSON.stringify([...savedItems, itemToLike]));
+      localStorage.setItem("likedItems", JSON.stringify([...savedItems, itemToLike]));
     }
   };
 

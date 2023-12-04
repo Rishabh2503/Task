@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import Layout from '../../components/Layout';
-import SavedItem from '../../components/SavedItem';
+import React, { useEffect, useState } from "react";
+import Layout from "../../components/Layout";
+import SavedItem from "../../components/SavedItem";
 
 const SavedPage: React.FC = () => {
   const [savedItems, setSavedItems] = useState<any[]>([]); // Change the type based on your Photo and Post types
 
   useEffect(() => {
     // Retrieve saved items from local storage
-    const savedItemsFromLocalStorage = JSON.parse(localStorage.getItem('likedItems') || '[]');
+    const savedItemsFromLocalStorage = JSON.parse(localStorage.getItem("likedItems") || "[]");
     setSavedItems(savedItemsFromLocalStorage);
   }, []);
 

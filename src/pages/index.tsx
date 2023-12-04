@@ -1,4 +1,4 @@
-import Content from "../components/Content";  // Remove curly braces around Content
+import Content from "../components/Content";  
 
 export default function HomePage() {
   console.log("render");

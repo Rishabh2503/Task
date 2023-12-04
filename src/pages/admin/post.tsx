@@ -1,7 +1,7 @@
-import React, { useState, useEffect, Suspense } from 'react';
-import axios from 'axios';
-import PostCard from '../../components/PostCard';
-import Layout from '../../components/Layout';
+import React, { useState, useEffect, Suspense } from "react";
+import axios from "axios";
+import PostCard from "../../components/PostCard";
+import Layout from "../../components/Layout";
 
 interface Post {
   id: number;
@@ -15,10 +15,10 @@ const PostPage: React.FC = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
+      const response = await axios.get<Post[]>("https://jsonplaceholder.typicode.com/posts");
       setPosts(response.data.slice(0, 20));
     } catch (error) {
-      console.error('Error fetching posts:', error);
+      console.error("Error fetching posts:", error);
     }
   };
 
@@ -30,7 +30,7 @@ const PostPage: React.FC = () => {
     const itemToLike = posts.find((post) => post.id === id);
     if (itemToLike) {
       setLikedPosts((prevLikedPosts) => [...prevLikedPosts, itemToLike]);
-      localStorage.setItem('likedItems', JSON.stringify([...likedPosts, itemToLike]));
+      localStorage.setItem("likedItems", JSON.stringify([...likedPosts, itemToLike]));
     }
   };
 

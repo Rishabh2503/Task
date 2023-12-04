@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
 interface ContentProps {
-  title: string;
+  title: string; 
 }
 
 const Content: React.FC<ContentProps> = ({ title }) => {

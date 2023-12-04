@@ -4,15 +4,15 @@ import axios from "axios";
 const PhotoCard: React.FC<PhotoCardProps> = ({ photo, onLike }) => {
   const [loading, setLoading] = useState(false);
   const [photos, setPhotos] = useState([]);
-  const [savedItems, setSavedItems] = useState([]);
+  // const [savedItems, setSavedItems] = useState([]);
 
   const fetchPhotos = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('https://jsonplaceholder.typicode.com/photos');
+      const response = await axios.get("https://jsonplaceholder.typicode.com/photos");
       setPhotos(response.data.slice(0, 20)); 
     } catch (error) {
-      console.error('Error fetching photos:', error);
+      console.error("Error fetching photos:", error);
     } finally {
       setLoading(false);
     }
@@ -28,7 +28,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ photo, onLike }) => {
   };
 
   return (
-    <div className={`card w-96 bg-base-100 shadow-xl mx-4 my-4 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}>
+    <div className={`card w-96 bg-base-100 shadow-xl m-4 ${loading ? "opacity-50 cursor-not-allowed" : ""}`}>
       {loading ? (
         <div className="flex flex-col gap-4 w-52 p-8">
           <div className="skeleton h-32 w-full"></div>
