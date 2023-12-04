@@ -10,7 +10,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ photo, onLike }) => {
     try {
       setLoading(true);
       const response = await axios.get('https://jsonplaceholder.typicode.com/photos');
-      setPhotos(response.data.slice(0, 20)); // Limit to the first 20 for pagination
+      setPhotos(response.data.slice(0, 20)); 
     } catch (error) {
       console.error('Error fetching photos:', error);
     } finally {
@@ -24,11 +24,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ photo, onLike }) => {
 
   const handleLike = (id: number) => {
     onLike(photo.id);
-    // Logic to handle saving/liking an item
-    // const itemToSave = photos.find((photo) => photo.id === id);
-    // if (itemToSave) {
-    //   setSavedItems((prevItems) => [...prevItems, itemToSave]);
-    // }
+   
   };
 
   return (

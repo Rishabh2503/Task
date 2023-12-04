@@ -3,10 +3,10 @@ import React from 'react';
 interface SavedItemProps {
   item: {
     id: number;
-    type: 'photo' | 'post'; // Explicitly define the type as 'photo' or 'post'
+    type: 'photo' | 'post';
     title: string;
-    url?: string; // URL is optional for posts
-    content?: string; // Content is optional for photos
+    url?: string; 
+    content?: string; 
   };
 }
 
@@ -24,7 +24,6 @@ const SavedItem: React.FC<SavedItemProps> = ({ item }) => {
           </figure>
         )}
         {item.type === 'post' && item.content && <p>{item.content}</p>}
-        {/* Additional information based on your Photo and Post types */}
       </div>
     </div>
   );

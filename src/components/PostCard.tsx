@@ -1,4 +1,3 @@
-// components/PostCard.tsx
 import React from 'react';
 
 interface PostCardProps {

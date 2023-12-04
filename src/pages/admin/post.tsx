@@ -32,7 +32,6 @@ const PostPage: React.FC = () => {
     if (itemToLike) {
       setLikedPosts((prevLikedPosts) => [...prevLikedPosts, itemToLike]);
   
-      // Save liked items to local storage
       localStorage.setItem('likedItems', JSON.stringify([...likedPosts, itemToLike]));
     }
   };
