@@ -1,5 +1,4 @@
-// pages/PostPage.tsx
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import axios from 'axios';
 import PostCard from '../../components/PostCard';
 import Layout from '../../components/Layout';
@@ -31,7 +30,6 @@ const PostPage: React.FC = () => {
     const itemToLike = posts.find((post) => post.id === id);
     if (itemToLike) {
       setLikedPosts((prevLikedPosts) => [...prevLikedPosts, itemToLike]);
-  
       localStorage.setItem('likedItems', JSON.stringify([...likedPosts, itemToLike]));
     }
   };

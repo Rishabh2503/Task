@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import axios from 'axios';
 import PhotoCard from '../../components/PhotoCard';
 import Layout from '../../components/Layout';
@@ -10,7 +9,7 @@ interface Photo {
   url: string;
 }
 
-const photo: React.FC = () => {
+const Photo: React.FC = () => {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [savedItems, setSavedItems] = useState<Photo[]>([]);
 
@@ -31,15 +30,13 @@ const photo: React.FC = () => {
     const itemToLike = photos.find((photo) => photo.id === id);
     if (itemToLike) {
       setSavedItems((prevSavedItems) => [...prevSavedItems, itemToLike]);
-
-      // Save liked items to local storage
       localStorage.setItem('likedItems', JSON.stringify([...savedItems, itemToLike]));
     }
   };
 
   return (
     <Layout>
-      <div className="pageContent flex flex-wrap">
+      <div className="page-content flex flex-wrap">
         <Suspense fallback={<div>Loading...</div>}>
           {photos.map((photo) => (
             <PhotoCard key={photo.id} photo={photo} onLike={handleLike} />
@@ -50,4 +47,4 @@ const photo: React.FC = () => {
   );
 };
 
-export default photo;
+export default Photo;

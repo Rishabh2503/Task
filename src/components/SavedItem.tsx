@@ -5,8 +5,8 @@ interface SavedItemProps {
     id: number;
     type: 'photo' | 'post';
     title: string;
-    url?: string; 
-    content?: string; 
+    url?: string;
+    content?: string;
   };
 }
 
